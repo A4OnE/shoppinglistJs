@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  margin: auto;
+  padding: 20px;
+  height: fit-content;
+  background-color: white;
+  box-shadow: 1px 1px 10px gray;
+  margin-top: 50px;
+}
+
+.forms {
+  display: flex;
+  /* flex-direction: column; */
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.forms input[type="text"] {
+  border: none;
+  outline: none;
+  padding: 10px 10px;
+  background-color: lightgray;
+  border-radius: 3px;
+  width: 100%;
+}
+/* .forms ::placeholder {
+  color: rgb(208, 202, 202);
+} */
+.forms button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  padding: 10px 10px;
+  background-color: black;
+  border-radius: 3px;
+  color: white;
+  text-transform: capitalize;
+  width: 160px;
+}
+.list-items {
+  /* border: 1px solid lightgray; */
+  width: 100%;
+  padding: 10px;
+}
+.list-items li {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  margin-top: 20px;
+  padding: 8px 16px;
+  background-color: rgb(239, 238, 238);
+  border-radius: 3px;
+  text-transform: capitalize;
+  font-weight: 600;
+}
+
+.list-items button {
+  border: none;
+  outline: none;
+  color: red;
+  background: transparent;
+}
+.list-items i {
+  cursor: pointer;
+}
+.list-items i:hover {
+  transform: scale(1.4);
+  color: rgb(162, 13, 13);
+}
+.filterClearSection {
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.filterClearSection input[type="text"] {
+  border: none;
+  border-bottom: 1px solid lightgray;
+  outline: none;
+  padding: 10px 10px;
+  border-radius: 3px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.filterClearSection button {
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+  border-radius: 3px;
+  /* width: fit-content; */
+  background-color: red;
+  cursor: pointer;
+  color: white;
+  text-transform: capitalize;
+}
+
+.filterClearSection ::placeholder {
+  color: rgb(188, 188, 188);
+}
+.edit-item {
+  color: gray;
+}

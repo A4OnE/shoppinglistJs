@@ -1,0 +1,24 @@
+.inp{
+    width:60%;
+    margin: auto;
+
+}
+.inputs{
+    
+    height: fit-content;
+}
+.buttons{
+    display: grid;
+    grid-template-columns: repeat(4,auto);
+    place-content: center;
+    width: 100%;
+}
+button{
+    cursor: pointer;
+    margin: 2px;
+
+}
+button:hover{
+  opacity: 0.5;
+
+}
