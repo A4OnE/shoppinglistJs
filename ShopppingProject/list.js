@@ -264,10 +264,16 @@ document.addEventListener("click", (event) => {
 
   // Check if the click is outside the list, not on the update button, and not inside the input field
   if (!isClickInsideList && !isClickOnUpdateButton && !isClickInsideInput) {
-    addItemsBtn.innerHTML = `<i class="fa-solid fa-plus"></i> Add Item`;
-    addItemsBtn.style.backgroundColor = "black";
-    addItemsBtn.style.color = "white";
-    isEditMode = false;
+    // addItemsBtn.innerHTML = `<i class="fa-solid fa-plus"></i> Add Item`;
+    // addItemsBtn.style.backgroundColor = "black";
+    // addItemsBtn.style.color = "white";
+
+    // const lists = document.querySelectorAll("li");
+    // lists.forEach((ele) => {
+    //   ele.classList.remove("edit-item");
+    // });
+    // isEditMode = false;
+    window.location.reload();
   }
 });
 
