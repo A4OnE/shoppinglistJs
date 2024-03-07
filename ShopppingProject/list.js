@@ -7,10 +7,11 @@ let isEditMode = false;
 const submitItem = (e) => {
   const value = addInputData.value.trim();
   e.preventDefault();
+  //   checks duplicate entry in list to prevent
   if (!isEditMode) {
     if (CheckItemIfExistsAlredy(value)) {
       alert("Item already exists");
-      //   return;
+      return;
     }
   }
   if (value !== "") {
@@ -132,10 +133,8 @@ const editItem = (item) => {
             console.log(index, 1, newValue);
             itemFromStorage.splice(index, 1, newValue);
             localStorage.setItem("items", JSON.stringify(itemFromStorage));
-            // window.location.reload();
+            window.location.reload();
           }
-          CheckItemIfExistsAlredy(newValue) && alert("already");
-
           // Change the button text to "add Item" after submission of data
           addItemsBtn.innerHTML = `<i class="fa-solid fa-plus"></i> add Item`;
           addItemsBtn.style.backgroundColor = "black";
@@ -151,14 +150,14 @@ const editItem = (item) => {
 };
 // To check if items in localStorage already exists
 const CheckItemIfExistsAlredy = (item) => {
-  // console.log(item);
+  // checks first is there data is null or not if not then it will checks data  in itemFromStorage
   let itemFromStorage = JSON.parse(localStorage.getItem("items"));
-  if (JSON.parse(localStorage.getItem("items")) === null) {
-    itemFromStorage = [];
-  } else {
-    itemFromStorage = itemFromStorage.includes(item);
-  }
-  return itemFromStorage;
+  //   if (JSON.parse(localStorage.getItem("items")) === null) {
+  //     itemFromStorage = [];
+  //   } else {
+  return itemFromStorage.includes(item.toLowerCase());
+  //   }
+  //   return itemFromStorage;
 };
 const StoreValueInStorage = (item) => {
   //   console.log(item);
@@ -178,14 +177,14 @@ const removeAllItemsFromLists = () => {
     listItems.removeChild(allListItems[i]);
     resetUI();
     localStorage.clear();
-    // let storageValue;
-    // if (localStorage.getItem("items") === null) {
-    //   storageValue = [];
-    // } else {
-    //   storageValue = JSON.parse(localStorage.getItem("items"));
-    // }
+    let storageValue;
+    if (localStorage.getItem("items") === null) {
+      storageValue = [];
+    } else {
+      storageValue = JSON.parse(localStorage.getItem("items"));
+    }
 
-    // localStorage.setItem("items", JSON.stringify(storageValue));
+    localStorage.setItem("items", JSON.stringify(storageValue));
   }
 };
 
