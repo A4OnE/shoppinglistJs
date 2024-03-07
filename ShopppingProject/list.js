@@ -40,6 +40,7 @@ const getDataFromStorage = () => {
   const storedItems = JSON.parse(localStorage.getItem("items"));
   //   "if (storedItems){} condition" chai check garna suruma input field
   //  empty  huda "true" vaye matra run hos vanera rakhne ho code
+
   if (storedItems) {
     storedItems.forEach((ele) => {
       const list = document.createElement("li");
@@ -52,6 +53,14 @@ const getDataFromStorage = () => {
       resetUI();
     });
   }
+  let storageValue;
+  if (localStorage.getItem("items") === null) {
+    storageValue = [];
+  } else {
+    storageValue = JSON.parse(localStorage.getItem("items"));
+  }
+
+  localStorage.setItem("items", JSON.stringify(storageValue));
 };
 
 // const EditModes = () => {
@@ -169,7 +178,7 @@ const StoreValueInStorage = (item) => {
   }
   itemFromStorage.push(item);
 
-  return localStorage.setItem("items", JSON.stringify(itemFromStorage));
+  localStorage.setItem("items", JSON.stringify(itemFromStorage));
 };
 const removeAllItemsFromLists = () => {
   const allListItems = document.querySelectorAll("li");
@@ -279,6 +288,7 @@ document.addEventListener("click", (event) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   resetUI();
+
   //   updatBtnCloseIfClickedOutsideList();
   getDataFromStorage();
 });
