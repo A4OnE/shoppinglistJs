@@ -169,7 +169,7 @@ const StoreValueInStorage = (item) => {
   }
   itemFromStorage.push(item);
 
-  localStorage.setItem("items", JSON.stringify(itemFromStorage));
+  return localStorage.setItem("items", JSON.stringify(itemFromStorage));
 };
 const removeAllItemsFromLists = () => {
   const allListItems = document.querySelectorAll("li");
