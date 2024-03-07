@@ -52,15 +52,16 @@ const getDataFromStorage = () => {
       listItems.appendChild(list);
       resetUI();
     });
-  }
-  let storageValue;
-  if (localStorage.getItem("items") === null) {
-    storageValue = [];
   } else {
-    storageValue = JSON.parse(localStorage.getItem("items"));
-  }
+    // let storageValue;
+    if (localStorage.getItem("items") === null) {
+      storedItems = [];
+    } else {
+      storedItems = JSON.parse(localStorage.getItem("items"));
+    }
 
-  localStorage.setItem("items", JSON.stringify(storageValue));
+    localStorage.setItem("items", JSON.stringify(storedItems));
+  }
 };
 
 // const EditModes = () => {
