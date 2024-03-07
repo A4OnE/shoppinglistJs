@@ -45,5 +45,5 @@ button:hover{
 /* Change link color */
 .button-wrapper button a {
   color: white; /* Set link color */
-  text-decoration: underline; /* Underline on hover */
+  text-decoration: none; /* Underline on hover */
 }

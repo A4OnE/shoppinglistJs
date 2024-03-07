@@ -153,9 +153,9 @@ const CheckItemIfExistsAlredy = (item) => {
   // checks first is there data is null or not if not then it will checks data  in itemFromStorage
   let itemFromStorage = JSON.parse(localStorage.getItem("items"));
   if (JSON.parse(localStorage.getItem("items")) === null) {
-    itemFromStorage = [];
+    itemFromStorage = itemFromStorage = [];
   } else {
-    itemFromStorage.includes(item.toLowerCase());
+    itemFromStorage = itemFromStorage.includes(item.toLowerCase());
   }
   return itemFromStorage;
 };
