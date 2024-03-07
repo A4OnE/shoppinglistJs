@@ -41,3 +41,9 @@ button:hover{
 .button-wrapper button:hover {
   background-color: #45a049; /* Darker green background on hover */
 }
+
+/* Change link color */
+.button-wrapper button a {
+  color: white; /* Set link color */
+  text-decoration: underline; /* Underline on hover */
+}

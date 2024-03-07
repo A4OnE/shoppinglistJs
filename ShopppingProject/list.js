@@ -152,12 +152,12 @@ const editItem = (item) => {
 const CheckItemIfExistsAlredy = (item) => {
   // checks first is there data is null or not if not then it will checks data  in itemFromStorage
   let itemFromStorage = JSON.parse(localStorage.getItem("items"));
-  //   if (JSON.parse(localStorage.getItem("items")) === null) {
-  //     itemFromStorage = [];
-  //   } else {
-  return itemFromStorage.includes(item.toLowerCase());
-  //   }
-  //   return itemFromStorage;
+  if (JSON.parse(localStorage.getItem("items")) === null) {
+    itemFromStorage = [];
+  } else {
+    itemFromStorage.includes(item.toLowerCase());
+  }
+  return itemFromStorage;
 };
 const StoreValueInStorage = (item) => {
   //   console.log(item);
