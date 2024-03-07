@@ -53,9 +53,8 @@ const getDataFromStorage = () => {
       resetUI();
     });
   } else {
-    // let storageValue;
     if (localStorage.getItem("items") === null) {
-      storedItems = [];
+      storedItems = ["lado* mugi=child"];
     } else {
       storedItems = JSON.parse(localStorage.getItem("items"));
     }
