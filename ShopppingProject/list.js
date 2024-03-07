@@ -52,14 +52,6 @@ const getDataFromStorage = () => {
       listItems.appendChild(list);
       resetUI();
     });
-  } else {
-    if (localStorage.getItem("items") === null) {
-      storedItems = ["lado* mugi=child"];
-    } else {
-      storedItems = JSON.parse(localStorage.getItem("items"));
-    }
-
-    localStorage.setItem("items", JSON.stringify(storedItems));
   }
 };
 
